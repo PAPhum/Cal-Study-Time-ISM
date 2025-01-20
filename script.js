@@ -1,4 +1,4 @@
-// ข้อมูลจำนวนครั้งที่ลาได้สูงสุดสำหรับแต่ละวิชา
+
 const subjectData = {
     "Math Add": 12,
     "Physic": 12,
@@ -19,7 +19,7 @@ const subjectData = {
     "Esc": 4,
 };
 
-// ข้อมูลจำนวนครั้งเรียนในแต่ละวันและวิชา
+
 const dailySchedule = {
     "Monday": { "Physic": 2, "Bio": 1, "Social": 1, "Eng Main": 1, "Eng Add": 1, "History": 1 },
     "Tuesday": { "Math Exp": 2, "Sci Exp": 2, "Eng Add": 1, "Com": 1, "Math Add": 1 },
@@ -73,7 +73,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         const remainingDisplay = remaining >= 0 ? remaining : `<span class="highlight">${remaining}</span>`;
 
         // ถ้าลาเกินเกินจะเก็บวิชานั้นไว้ในอาเรย์
-        if (remaining < 0) {
+        if (remaining <= 0) {
             overLimitSubjects.push({ subject, remaining });
             allSubjectsOnTrack = false; // ถ้ามีวิชาที่ลาเกินให้เปลี่ยนเป็น false
         }
@@ -93,7 +93,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
     resultDiv.innerHTML = table;
 
     // แจ้งเตือนการลาเกิน
-    if (overLimitSubjects.length > 0) {
+    if (overLimitSubjects.length >= 0) {
         let summary = `<div class="summary"><h3>สรุปการลาเกิน:</h3><ul>`;
         overLimitSubjects.forEach(item => {
             const daysForSubject = Object.keys(dailySchedule).filter(day => dailySchedule[day][item.subject]);

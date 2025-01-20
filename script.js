@@ -25,7 +25,7 @@ const dailySchedule = {
     "Tuesday": { "Math Exp": 2, "Sci Exp": 2, "Eng Add": 1, "Com": 1, "Math Add": 1 },
     "Wednesday": { "Thai Main": 1, "History": 1, "Eng Main": 1, "Math Main": 1, "Law": 1, "Thai Add": 1, "Esc": 1 },
     "Thursday": { "Thai Main": 1, "Bio": 1, "Eng Main": 2, "Physic": 1, "Social": 1, "Math Add": 1 },
-    "Friday": { "Math Add": 1, "Physic": 1, "Chemi": 1, "Bio": 1, "Eng Add": 2, "Astro": 1 },
+    "Friday": { "Math Add": 1, "Physic": 1, "Chemi": 1, "Bio": 1, "Eng Main": 2, "Astro": 1 },
 };
 
 // ฟังก์ชันคำนวณการลา

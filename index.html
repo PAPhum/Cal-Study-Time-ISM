@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cal STY Time</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cal วันลา ISM</h1>
+
+    <!-- ฟอร์มกรอกข้อมูล -->
+    <form id="absence-form">
+      <h2>กรอกจำนวนวันที่ลา</h2>
+      <h6>วันลาติดลบ=ชห.</h6>
+
+      <div class="day-section">
+        <label for="monday">Monday:</label>
+        <input type="number" id="monday" min="0" value="0">
+      </div>
+
+      <div class="day-section">
+        <label for="tuesday">Tuesday:</label>
+        <input type="number" id="tuesday" min="0" value="0">
+      </div>
+
+      <div class="day-section">
+        <label for="wednesday">Wednesday:</label>
+        <input type="number" id="wednesday" min="0" value="0">
+      </div>
+
+      <div class="day-section">
+        <label for="thursday">Thursday:</label>
+        <input type="number" id="thursday" min="0" value="0">
+      </div>
+
+      <div class="day-section">
+        <label for="friday">Friday:</label>
+        <input type="number" id="friday" min="0" value="0">
+      </div>
+
+      <button type="button" id="calculate-btn">คำนวณ</button>
+    </form>
+
+    <!-- แสดงผลลัพธ์ -->
+    <div id="result">
+      <h2>ผลลัพธ์</h2>
+      <div id="subject-data"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

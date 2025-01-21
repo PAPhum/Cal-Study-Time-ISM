@@ -28,14 +28,14 @@ const dailySchedule = {
     "Friday": { "Math Exp": 1, "Physic": 1, "Chemi": 1, "Bio": 1, "Eng Main": 2, "Astro": 1 },
 };
 
-// ฟังก์ชันคำนวณการลา
+// คำนวณการลา
 document.getElementById("calculate-btn").addEventListener("click", function () {
     const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
     const totalAbsence = {};
     let overLimitSubjects = [];
-    let allSubjectsOnTrack = true; // ตัวแปรเช็คว่าเวลาเรียนครบไหม
+    let allSubjectsOnTrack = true; // เช็คเวลาเรียนครบบ่
 
-    // คำนวณจำนวนวันที่ลาจากฟอร์ม
+    // คำนวณจำนวนวันลา
     days.forEach(day => {
         const daysAbsence = parseInt(document.getElementById(day.toLowerCase()).value, 10) || 0;
         const schedule = dailySchedule[day];
@@ -46,7 +46,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         }
     });
 
-    // แสดงผลลัพธ์ในรูปแบบตาราง
+    // result table
     const resultDiv = document.getElementById("subject-data");
     resultDiv.innerHTML = "";
 
@@ -63,16 +63,16 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
             <tbody>
     `;
 
-    // เพิ่มข้อมูลลงในตาราง
+    // เพิ่มข้อมูลลงตาราง
     for (const subject in totalAbsence) {
         const maxAbsence = subjectData[subject] || 0;
         const usedAbsence = totalAbsence[subject];
         let remaining = maxAbsence - usedAbsence;
 
-        // ถ้าจำนวนวันที่ลามากเกินไป จะเป็นค่าติดลบและไฮไลท์สีแดง
+        // ถ้าจำนวนวันที่ลามาก จะเป็นค่า-
         const remainingDisplay = remaining >= 0 ? remaining : `<span class="highlight">${remaining}</span>`;
 
-        // ถ้าลาเกินเกินจะเก็บวิชานั้นไว้ในอาเรย์
+        // ถ้าลาเกินจะเก็บวิชานั้นไว้ในอาเรย์
         if (remaining <= 0) {
             overLimitSubjects.push({ subject, remaining });
             allSubjectsOnTrack = false; // ถ้ามีวิชาที่ลาเกินให้เปลี่ยนเป็น false
@@ -89,10 +89,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
 
     table += `</tbody></table>`;
 
-    // ใส่ตารางลงใน div ที่แสดงผลลัพธ์
+    // ใส่ตารางใน div result
     resultDiv.innerHTML = table;
 
-    // แจ้งเตือนการลาเกิน
+    // เตือนลาเกิน
     if (overLimitSubjects.length >= 0) {
         let summary = `<div class="summary"><h3>สรุปการลาเกิน:</h3><ul>`;
         overLimitSubjects.forEach(item => {
@@ -106,7 +106,7 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
         summary += "</ul></div>";
         resultDiv.innerHTML += summary;
     } else {
-        // ถ้าทุกวิชาไม่มีการลาเกิน
+        // ถ้าทุกวิชาลาไม่เกิน
         resultDiv.innerHTML += `<div class="summary"><h3>เวลาเรียนครบ มั้ง😗</h3></div>`;
     }
 });

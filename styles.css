@@ -1,4 +1,4 @@
-/* โหลดฟอนต์ Athiti */
+
 @font-face {
     font-family: 'Athiti';
     src: url('font/Athiti-Regular.ttf') format('truetype');
@@ -29,7 +29,7 @@
 body {
     background-color: #121212;
     color: #ffffff;
-    font-family: 'Athiti', sans-serif; /* ใช้ฟอนต์ Athiti */
+    font-family: 'Athiti', sans-serif; 
     display: flex;
     justify-content: center;
     align-items: center;

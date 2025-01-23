@@ -23,7 +23,7 @@ const subjectData = {
 const dailySchedule = {
     "Monday": { "Physic": 2, "Bio": 1, "Social": 1, "Eng Main": 1, "Eng Add": 1, "History": 1 },
     "Tuesday": { "Math Exp": 1, "Sci Exp": 2, "Eng Add": 1, "Com": 1, "Math Add": 2 },
-    "Wednesday": { "Thai Main": 1, "History": 1, "Eng Main": 1, "Math Main": 1, "Law": 1, "Thai Add": 1, "Esc": 1 },
+    "Wednesday": { "Thai Main": 1, "History": 1, "Eng Main": 1, "Math Main": 1, "Law": 2, "Thai Add": 1 },
     "Thursday": { "Thai Main": 1, "Bio": 1, "Eng Main": 2, "Physic": 1, "Social": 1, "Math Add": 1 },
     "Friday": { "Math Exp": 1, "Physic": 1, "Chemi": 1, "Bio": 1, "Eng Main": 2, "Astro": 1 },
 };
